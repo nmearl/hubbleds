@@ -32,7 +32,7 @@ class SelectionTool(v.VueTemplate):
 
     def __init__(self, data, state, *args, **kwargs):
         self.state = state
-        self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        self.widget = WWTJupyterWidget(app_url="/wwtstatic/research/", hide_all_chrome=True)
         self.widget.background = 'SDSS: Sloan Digital Sky Survey (Optical)'
         self.widget.foreground = 'SDSS: Sloan Digital Sky Survey (Optical)'
         self.widget.center_on_coordinates(self.START_COORDINATES,

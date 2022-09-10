@@ -39,7 +39,7 @@ class DistanceTool(v.VueTemplate):
 
     def __init__(self, state, *args, **kwargs):
         self.state = state
-        self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        self.widget = WWTJupyterWidget(app_url="/wwtstatic/research/", hide_all_chrome=True)
         self._setup_widget()
         self.measuring = kwargs.get('measuring', False)
         self.angular_size = Angle(0, u.deg)

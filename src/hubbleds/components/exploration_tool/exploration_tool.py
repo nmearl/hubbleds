@@ -29,7 +29,7 @@ class ExplorationTool(v.VueTemplate):
     UPDATE_TIME = 1  # seconds
 
     def __init__(self, *args, **kwargs):
-        self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        self.widget = WWTJupyterWidget(app_url="/wwtstatic/research/", hide_all_chrome=True)
         self.widget._set_message_type_callback('wwt_view_state',
                                                self._handle_view_message)
         self.last_update = datetime.now()
