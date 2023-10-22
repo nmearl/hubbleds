@@ -812,9 +812,9 @@ class StageFour(HubbleStage):
                    'all_distr_viewer_student',
                    ]
 
-        viewer_type = ["scatter",
-                       "scatter",
-                       "scatter",
+        viewer_type = ["scatter_mark",
+                       "scatter_mark",
+                       "scatter_mark",
                        "histogram",
                        "histogram",
                        "histogram",]
