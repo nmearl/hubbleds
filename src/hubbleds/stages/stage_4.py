@@ -439,8 +439,8 @@ class StageThree(HubbleStage):
                    'hubble_race_viewer',
                    ]
 
-        viewer_type = ["scatter",
-                       "scatter",]
+        viewer_type = ["scatter_mark",
+                       "scatter_mark",]
 
         theme_name = "dark" if dark else "light"
         for viewer, vtype in zip(viewers, viewer_type):

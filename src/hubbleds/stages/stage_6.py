@@ -258,7 +258,7 @@ class StageFive(HubbleStage):
     def _update_viewer_style(self, dark):
         viewers = ['prodata_viewer']
 
-        viewer_type = ["scatter"]
+        viewer_type = ["scatter_mark"]
 
         theme_name = "dark" if dark else "light"
         for viewer, vtype in zip(viewers, viewer_type):
