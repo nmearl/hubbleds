@@ -5,7 +5,8 @@ import ipyvue as v
 from astropy.coordinates import Angle, SkyCoord
 from cosmicds.utils import RepeatedTimer, load_template
 from ipywidgets import DOMWidget, widget_serialization
-from pywwt.jupyter import WWTJupyterWidget
+# from pywwt.jupyter import WWTJupyterWidget
+from ipywwt import WWTWidget
 from traitlets import Instance, Bool, Float, Int, Unicode, observe, Dict
 
 from ...utils import GALAXY_FOV, angle_to_json, \
@@ -48,8 +49,9 @@ class DistanceTool(v.VueTemplate):
     START_COORDINATES = SkyCoord(180 * u.deg, 25 * u.deg, frame='icrs')
 
     def __init__(self, *args, **kwargs):
-        self.widget = WWTJupyterWidget(hide_all_chrome=True)
-        self._setup_widget()
+        # self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        self.widget = WWTWidget()
+        # self._setup_widget()
         self.measuring = kwargs.get('measuring', False)
         self.guard = kwargs.get('guard', False)
         self.angular_size = Angle(0, u.deg)
