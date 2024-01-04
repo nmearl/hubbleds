@@ -6,7 +6,8 @@ from cosmicds.utils import API_URL, request_session
 from cosmicds.utils import load_template
 from ipywidgets import DOMWidget, widget_serialization
 from pandas import DataFrame, concat
-from pywwt.jupyter import WWTJupyterWidget
+# from pywwt.jupyter import WWTJupyterWidget
+from ipywwt import WWTWidget
 from traitlets import Dict, Instance, Int, Bool, observe
 
 from ...utils import FULL_FOV, GALAXY_FOV
@@ -29,7 +30,8 @@ class SelectionTool(v.VueTemplate):
     START_COORDINATES = SkyCoord(180 * u.deg, 25 * u.deg, frame='icrs')
 
     def __init__(self, data, *args, **kwargs):
-        self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        # self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        self.widget = WWTWidget()
         self.widget.background = 'SDSS: Sloan Digital Sky Survey (Optical)'
         self.widget.foreground = 'SDSS: Sloan Digital Sky Survey (Optical)'
         self.widget.center_on_coordinates(self.START_COORDINATES, fov= 6 * u.arcmin, #start in close enough to see galaxies

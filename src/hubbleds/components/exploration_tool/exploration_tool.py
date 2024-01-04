@@ -5,7 +5,8 @@ import ipyvue as v
 from astropy.coordinates import Angle
 from cosmicds.utils import RepeatedTimer, load_template
 from ipywidgets import DOMWidget, widget_serialization
-from pywwt.jupyter import WWTJupyterWidget
+# from pywwt.jupyter import WWTJupyterWidget
+from ipywwt import WWTWidget
 from traitlets import Bool, Instance, Int
 
 
@@ -29,7 +30,8 @@ class ExplorationTool(v.VueTemplate):
     UPDATE_TIME = 1  # seconds
 
     def __init__(self, *args, **kwargs):
-        self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        # self.widget = WWTJupyterWidget(hide_all_chrome=True)
+        self.widget = WWTWidget()
         self.widget.foreground = 'Digitized Sky Survey (Color)'
         self.widget.background = 'Digitized Sky Survey (Color)'
         self.widget._set_message_type_callback('wwt_view_state',
