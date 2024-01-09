@@ -157,27 +157,28 @@
             <v-icon>mdi-plus</v-icon>
           </v-btn>
         </v-fab-transition>
-      </template>
-      Add galaxy to my dataset
-    </v-tooltip>
-    <v-tooltip top>
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          fab
-          dark
-          bottom
-          right
-          absolute
-          color="#00E676"
-          class="selection-fab black--text"
-          v-bind="attrs"
-          v-on="on"
-          @click="reset()">
-          <v-icon>mdi-cached</v-icon>
-        </v-btn>
-      </template>
-      Reset view
-    </v-tooltip>
+        </template>
+        Add galaxy to my dataset
+      </v-tooltip>
+      <v-tooltip top>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            fab
+            dark
+            bottom
+            right
+            absolute
+            color="#00E676"
+            class="selection-fab black--text"
+            v-bind="attrs"
+            v-on="on"
+            @click="reset()">
+            <v-icon>mdi-cached</v-icon>
+          </v-btn>
+        </template>
+        Reset view
+      </v-tooltip>
+    </div>
   </v-card>
 </template>
 

@@ -58,7 +58,7 @@
       <jupyter-widget
         :widget="widget"
         id="exploration-widget"
-      >
+      />
     </div>
   </v-card>
 </template>
