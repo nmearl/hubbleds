@@ -141,6 +141,7 @@
                   </p>
                   <p>
                     You can explore this view and see what is in the night sky, as astronomers have been doing for centuries. <strong>Pan</strong> (click and drag) and <strong>zoom</strong> (scroll in and out) to see parts of the sky beyond this view.
+                  </p>
                 </div>
                 <div
                   class="mb-2 mx-4"
@@ -152,7 +153,7 @@
                     >
                       <v-row>
                         <v-col>
-                          <c-exploration-tool id="exploration-tool">
+                          <c-exploration-tool id="exploration-tool" />
                         </v-col>
                       </v-row>
                       <v-row>
@@ -219,7 +220,7 @@
             </v-row>
             <v-snackbar
               v-model="timer_done[0]"
-              timeout="500000"
+              timeout=500000
               transition="fab-transition"
               top
               right
@@ -270,7 +271,7 @@
                       cols="8"
                       offset-lg="1"
                     >   
-                      <c-exploration-tool1 id="exploration-tool1">
+                      <c-exploration-tool1 id="exploration-tool1" />
                     </v-col>
                     <v-col
                       cols="4"
@@ -433,7 +434,7 @@
             </v-row>
             <v-snackbar
               v-model="timer_done[1]"
-              timeout="500000"
+              timeout=500000
               transition="fab-transition"
               top
               right
@@ -484,7 +485,7 @@
                       cols="8"
                       offset-lg="1"
                     >
-                      <c-exploration-tool2 id="exploration-tool2">
+                      <c-exploration-tool2 id="exploration-tool2" />
                     </v-col>
                     <v-col
                       cols="4"
@@ -609,7 +610,7 @@
             </v-row>
             <v-snackbar
               v-model="timer_done[2]"
-              timeout="500000"
+              timeout=500000
               transition="fab-transition"
               top
               right
