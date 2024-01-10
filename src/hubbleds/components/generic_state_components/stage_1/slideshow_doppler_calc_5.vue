@@ -807,7 +807,7 @@
         >
           <v-item
               v-for="n in state.doppler_calc_state.length"
-              :key="`btn-${n}`"
+              :key="`dbtn-${n}`"
               v-slot="{ active, toggle }"
           >
             <v-btn

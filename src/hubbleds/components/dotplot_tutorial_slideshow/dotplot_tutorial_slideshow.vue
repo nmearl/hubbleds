@@ -150,7 +150,7 @@
         >
           <v-item
             v-for="n in length"
-            :key="`btn-${n}`"
+            :key="`bbtn-${n}`"
             v-slot="{ active, toggle }"
           >
             <v-btn
