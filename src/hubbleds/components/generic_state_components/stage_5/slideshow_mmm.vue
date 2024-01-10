@@ -202,7 +202,7 @@
         >
           <v-item
             v-for="n in state.mmm_state.length"
-            :key="`btn-${n}`"
+            :key="`ebtn-${n}`"
             v-slot="{ active, toggle }"
           >
             <v-btn

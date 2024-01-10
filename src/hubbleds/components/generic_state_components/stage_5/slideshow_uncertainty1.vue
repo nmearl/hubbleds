@@ -368,7 +368,7 @@
         >
           <v-item
             v-for="n in state.uncertainty_state.length"
-            :key="`btn-${n}`"
+            :key="`fbtn-${n}`"
             v-slot="{ active, toggle }"
           >
             <v-btn

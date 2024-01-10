@@ -661,7 +661,7 @@
         <v-item-group v-model="step" class="text-center" mandatory>
           <v-item
             v-for="n in length"
-            :key="`btn-${n}`"
+            :key="`ibtn-${n}`"
             v-slot="{ active, toggle }"
           >
             <v-btn :input-value="active" icon @click="toggle">

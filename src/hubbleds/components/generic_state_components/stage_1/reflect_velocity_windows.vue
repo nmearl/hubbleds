@@ -360,7 +360,7 @@
         >
           <v-item
             v-for="n in length"
-            :key="`btn-${n}`"
+            :key="`cbtn-${n}`"
             v-slot="{ active, toggle }"
           >
           <!-- vue's v-for with a range starts the count at 1, so we have to add 2 in the disabled step instead of 1 to account for the fact that we are otherwise counting the windows from 0 https://v2.vuejs.org/v2/guide/list.html?redirect=true#v-for-with-a-Range-->
