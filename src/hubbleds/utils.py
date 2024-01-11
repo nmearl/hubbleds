@@ -4,6 +4,9 @@ from numpy import argsort, pi
 
 from cosmicds.utils import mode, percent_around_center_indices
 
+from pathlib import Path
+import ipyvue
+
 try:
     from astropy.cosmology import Planck18 as planck
 except ImportError:
@@ -36,6 +39,19 @@ GALAXY_FOV = 1.5 * u.arcmin
 FULL_FOV = 60 * u.deg
 
 IMAGE_BASE_URL = "https://cosmicds.github.io/cds-website/hubbleds_images"
+
+
+# Register any custom Vue components
+def register_vue_components():
+    # Register any custom Vue components
+    comp_dir = Path(
+        __file__).parent / "components" / "generic_state_components"
+
+    for comp_path in comp_dir.rglob("*.vue"):
+        if comp_path.is_file:
+            ipyvue.register_component_from_string(
+                name=comp_path.stem.replace('_', '-'),
+                value=comp_path.read_text())
 
 
 def angle_to_json(angle, _widget):
