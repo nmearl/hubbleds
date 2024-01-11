@@ -4,11 +4,9 @@ from warnings import filterwarnings
 filterwarnings(action="ignore", category=UserWarning)
 
 from cosmicds.app import Application
-import solara
 
 import solara
 from solara.alias import rv
-# from ..server import manager
 import hashlib
 
 from solara_enterprise import auth
@@ -16,6 +14,27 @@ from solara_enterprise import auth
 active = solara.reactive(False)
 user_info = solara.reactive({})
 class_code = solara.reactive("")
+update_db = solara.reactive(False)
+debug_mode = solara.reactive(False)
+
+
+def _load_from_cache():
+    cache = solara.cache.storage.get('cds-login-options')
+
+    if cache is not None:
+        for key, state in [('class_code', class_code),
+                           ('update_db', update_db),
+                           ('debug_mode', debug_mode)]:
+            if key in cache:
+                state.set(cache[key])
+
+
+def _save_to_cache():
+    solara.cache.storage['cds-login-options'] = {
+        'class_code': class_code.value,
+        'update_db': update_db.value,
+        'debug_mode': debug_mode.value
+    }
 
 
 @solara.component
@@ -37,7 +56,14 @@ def Login(**btn_kwargs):
                     solara.Text("Hubble's Law Data Story",
                                 classes=["display-1", "py-12"])
 
-                    solara.InputText(label="Class Code", value=class_code)
+                    solara.InputText(label="Class Code",
+                                     value=class_code,
+                                     continuous_update=True)
+
+                    # TODO: hide these in production
+                    with solara.Row():
+                        solara.Checkbox(label="Update DB", value=update_db)
+                        solara.Checkbox(label="Debug Mode", value=debug_mode)
 
                     solara.Button(
                         "Sign in",
@@ -45,15 +71,17 @@ def Login(**btn_kwargs):
                         disabled=not class_code.value,
                         outlined=False,
                         large=True,
-                        color='success'
+                        color='success',
+                        on_click=_save_to_cache
                     )
-                    rv.Spacer()
 
     return login
 
 
 @solara.component
 def Page():
+    _load_from_cache()
+
     with solara.VBox() as main:
         login_dialog = Login()
 
@@ -74,8 +102,8 @@ def Page():
                  ).encode()).hexdigest()
 
             app = Application.element(story='hubbles_law',
-                                      update_db=True,
-                                      show_team_interface=True,
+                                      update_db=update_db.value,
+                                      show_team_interface=debug_mode.value,
                                       allow_advancing=True,
                                       create_new_student=False,
                                       user_info={'name': username,
