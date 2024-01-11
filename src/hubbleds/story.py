@@ -23,9 +23,9 @@ from glue.core.data_factories.fits import fits_reader
 from glue.core.message import NumericalDataChangedMessage
 from glue.core.subset import CategorySubsetState
 
-
 from .data_management import *
-from .utils import H_ALPHA_REST_LAMBDA, HUBBLE_ROUTE_PATH, age_in_gyr_simple, data_summary_for_component, fit_line, MG_REST_LAMBDA
+from .utils import H_ALPHA_REST_LAMBDA, HUBBLE_ROUTE_PATH, age_in_gyr_simple, data_summary_for_component, fit_line, MG_REST_LAMBDA, register_vue_components
+
 
 @story_registry(name="hubbles_law")
 class HubblesLaw(Story):
@@ -43,6 +43,8 @@ class HubblesLaw(Story):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        register_vue_components()
 
         # UNIX epoch time, in milliseconds
         self.started = round(datetime.now(tz=timezone.utc).timestamp() * 1000)
