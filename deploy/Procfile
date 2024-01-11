@@ -1,0 +1,1 @@
+web: solara run hubbleds.run_solara --theme-variant dark --port=8865 --no-open
