@@ -41,7 +41,7 @@
           ]"
           :correct-answers="[]"
           :neutral-answers='[0,1,2]'
-          @select="(state) => { $emit('ready'); }"
+          @select="(state) => { this.$emit('ready'); }"
           score-tag="tre-dat-mc3"
         >
         </mc-radiogroup>

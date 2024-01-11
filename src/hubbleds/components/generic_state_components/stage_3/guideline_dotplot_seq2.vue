@@ -28,7 +28,7 @@
             ]" 
           :correct-answers="[1]"
           :neutral-answers="[0, 2]"
-          @select="(opt) => { if (opt.correct) { console.log('correct'); $emit('ready'); } }"
+          @select="onSelect"
           score-tag="ange_meas_consensus">
             >
           </mc-radiogroup>
@@ -61,6 +61,9 @@ module.exports = {
 
   data: () => ({
       define_consensus: false,
-  })
+  }),
+  methods: {
+    onSelect(opt) { if (opt.correct) { console.log('correct'); this.$emit('ready'); } }
+  }
 }
 </script>

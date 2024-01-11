@@ -34,7 +34,7 @@
           ]"
           :correct-answers="[0]"
           :wrong-answers='[1,2]'
-          @select="(state) => { if (state.correct) { $emit('ready'); }; }"
+          @select="onSelect"
           score-tag="closer-results"
         >
         </mc-radiogroup>
@@ -46,6 +46,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  methods: {
+    onSelect(state) { if (state.correct) { this.$emit('ready'); } }
+  }
 }
 </script>

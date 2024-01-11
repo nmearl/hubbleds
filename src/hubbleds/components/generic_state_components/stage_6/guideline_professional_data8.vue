@@ -24,7 +24,7 @@
       <free-response
         outlined
         auto-grow
-        rows="2"
+        rows=2
         label="Reflection #1"
         tag="prodata-reflect-8a"
       ></free-response>
@@ -33,7 +33,7 @@
       <free-response
         outlined
         auto-grow
-        rows="2"
+        rows=2
         label="Age from Edwin Hubble"
         tag="prodata-reflect-8b"
         type="float"
@@ -43,7 +43,7 @@
       <free-response
         outlined
         auto-grow
-        rows="2"
+        rows=2
         label="Age from HST Key Project"
         tag="prodata-reflect-8c"
         type="float"

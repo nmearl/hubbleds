@@ -31,7 +31,7 @@
             ]" 
           :correct-answers="[0]"
           :wrong-answers="[1,2]"
-          @select="(opt) => { if (opt.correct) { console.log('correct'); $emit('ready')} }"
+          @select="onSelect"
           score-tag="ang_meas_dist_relation">
 
           </mc-radiogroup>
@@ -42,6 +42,9 @@
 
 <script>
 module.exports = {
- props: ['state']
+ props: ['state'],
+  methods: {
+   onSelect(opt) { if (opt.correct) { console.log('correct'); this.$emit('ready'); } }
+  }
 }
 </script>

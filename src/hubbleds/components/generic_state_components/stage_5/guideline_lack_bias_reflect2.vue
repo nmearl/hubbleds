@@ -17,7 +17,7 @@
       <free-response
         outlined
         auto-grow
-        rows="2"
+        rows=2
         label="What are the chances"
         tag="student-chances"
         hint="Estimate how many measurement counts are within 2-3 Gyr of the central value and divide by the total number of measurements."
@@ -32,7 +32,7 @@
       <free-response
         outlined
         auto-grow
-        rows="2"
+        rows=2
         label="What are the chances"
         tag="class-chances"
         hint="Estimate how many measurement counts are within 2-3 Gyr of the central value and divide by the total number of measurements."

@@ -31,7 +31,7 @@
             ]" 
           :correct-answers="[1]"
           :wrong-answers="[0, 2]"
-          @select="(opt) => { if (opt.correct) { console.log('correct'); $emit('ready'); } }"
+          @select="onSelect"
           score-tag="reflect_vel_value">
             >
           </mc-radiogroup>
@@ -43,5 +43,8 @@
 <script>
 module.exports = {
   props: ['state'],
+  methods: {
+    onSelect(opt) { if (opt.correct) { console.log('correct'); this.$emit('ready'); } }
+  }
 }
 </script>

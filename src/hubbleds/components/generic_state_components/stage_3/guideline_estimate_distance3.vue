@@ -14,7 +14,7 @@
   >
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+      v-intersect="checkIntersecting"
     >
       <p>
         Enter the <strong>angular size</strong> of your galaxy in <strong>arcseconds</strong> in the box.
@@ -126,6 +126,9 @@ module.exports = {
         return value && value === expectedAnswers[index];
       });
     }
+  },
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
   }
 };
 </script>

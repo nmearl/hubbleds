@@ -34,7 +34,7 @@
           ]"
           :correct-answers="[2]"
           :wrong-answers='[0,1]'
-          @select="(state) => { if (state.correct) { $emit('ready'); } }"
+          @select="onSelect"
           score-tag="histogram-distribution"
         >
         </mc-radiogroup>
@@ -45,6 +45,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  methods: {
+    onSelect(state) { if (state.correct) { this.$emit('ready'); } }
+  }
 }
 </script>

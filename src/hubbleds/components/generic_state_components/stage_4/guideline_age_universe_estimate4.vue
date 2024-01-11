@@ -10,7 +10,7 @@
   >
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+      v-intersect="checkIntersecting"
     >
       <p class="mb-4">
         You entered:
@@ -176,6 +176,9 @@ module.exports = {
         this.resetAllMathJax(this.state.hypgal_distance, velocity);
       }
     }
+  },
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
   }
 }
 </script>

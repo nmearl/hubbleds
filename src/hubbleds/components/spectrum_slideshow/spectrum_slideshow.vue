@@ -525,6 +525,7 @@
                   <p>
                     Since we know the wavelengths emitted or absorbed by an element when it is not moving, we can use these <strong>rest wavelengths</strong> as a reference to compare against the <strong>observed wavelengths</strong> of the light when an object <em>is</em> moving.
                   </p>
+                </v-col>
               </v-row>
               <v-row>
                 <v-col

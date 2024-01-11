@@ -81,7 +81,7 @@
         >
           <free-response
             outlined
-            rows="1"
+            rows=1
             label="Most Likely Age"
             tag="best-guess-age"
             type="float"
@@ -107,7 +107,7 @@
           <free-response
             outlined
             auto-grow
-            rows="2"
+            rows=2
             label="My Reasoning"
             tag="my-reasoning"
           ></free-response>

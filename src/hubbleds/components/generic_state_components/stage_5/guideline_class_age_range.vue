@@ -14,7 +14,7 @@
   >
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)); }}"
+      v-intersect="checkIntersecting"
     >
       <p>
         Let's consider the range of age estimates for the universe obtained by you and your classmates.
@@ -111,6 +111,9 @@ module.exports = {
         return value && value === expectedAnswers[index];
       });
     }
+  },
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)); }}
   }
 };
 </script>

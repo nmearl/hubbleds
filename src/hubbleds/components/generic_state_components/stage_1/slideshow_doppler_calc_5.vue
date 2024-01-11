@@ -42,11 +42,7 @@
                        class="no-transition"
         >
           <v-card-text
-              v-intersect="(entries, _observer, intersecting) => {
-              if (!intersecting) return;
-              const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-              MathJax.typesetPromise(targets);
-            }"
+              v-intersect="checkIntersecting"
               class="pt-8"
           >
             <p>
@@ -156,11 +152,7 @@
                        class="no-transition"
         >
           <v-card-text
-              v-intersect="(entries, _observer, intersecting) => {
-                if (!intersecting) return;
-                const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-                MathJax.typesetPromise(targets);
-              }"
+              v-intersect="checkIntersecting"
               class="pt-8"
           >
             <v-card
@@ -273,11 +265,7 @@
                        class="no-transition"
         >
           <v-card-text
-              v-intersect="(entries, _observer, intersecting) => {
-              if (!intersecting) return;
-              const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-              MathJax.typesetPromise(targets);
-            }"
+              v-intersect="checkIntersecting"
               class="pt-8"
           >
             <v-card
@@ -393,11 +381,7 @@
                        class="no-transition"
         >
           <v-card-text
-              v-intersect="(entries, _observer, intersecting) => {
-              if (!intersecting) return;
-              const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-              MathJax.typesetPromise(targets);
-            }"
+              v-intersect="checkIntersecting"
               class="pt-8"
           >
             <v-card
@@ -520,11 +504,7 @@
                        class="no-transition"
         >
           <v-card-text
-              v-intersect="(entries, _observer, intersecting) => {
-              if (!intersecting) return;
-              const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-              MathJax.typesetPromise(targets);
-            }"
+              v-intersect="checkIntersecting"
               class="pt-8"
           >
             <p>
@@ -605,11 +585,7 @@
                 </v-row>
                 <v-row
                     v-if="state.doppler_calc_state.failedValidation5"
-                    v-intersect="(entries, _observer, intersecting) => {
-                    if (!intersecting) return;
-                    const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-                    MathJax.typesetPromise(targets);
-                  }"
+                    v-intersect="checkIntersecting"
                     class="my-1 yellow--text font-weight-bold"
                     no-gutters
                 >
@@ -663,11 +639,7 @@
                        class="no-transition"
         >
           <v-card-text
-              v-intersect="(entries, _observer, intersecting) => {
-              if (!intersecting) return;
-              const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-              MathJax.typesetPromise(targets);
-            }"
+              v-intersect="checkIntersecting"
               class="pt-8"
           >
             <v-card
@@ -937,6 +909,13 @@ module.exports = {
   computed: {
     step() {
       return this.state.doppler_calc_state.step;
+    },
+    checkIntersecting() {
+      return (entries, _observer, intersecting) => {
+        if (!intersecting) return;
+        const targets = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
+        window.MathJax.typesetPromise(targets);
+      }
     }
   },
   watch: {

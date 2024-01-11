@@ -37,7 +37,7 @@
             'Try again. Drag the slider slowly toward the left (lower age) and observe what happens to the slope of the graphed data. Then drag the slider to the right (higher age) and observe what happens to the slope.'
           ]"
           :correct-answers="[0]"
-          @select="(state) => { if (state.correct) { $emit('ready'); } }"
+          @select="onSelect"
           score-tag="age-slope-trend"
         >
         </mc-radiogroup>
@@ -49,6 +49,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  methods: {
+    onSelect(state) { if (state.correct) { this.$emit('ready'); } }
+  }
 }
 </script>

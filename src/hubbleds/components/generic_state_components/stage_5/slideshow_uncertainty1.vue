@@ -138,11 +138,11 @@
                   <free-response
                     outlined
                     auto-grow
-                    rows="2"
+                    rows=2
                     label="Shortcoming #4"
                     hint="(if you can think of any more)"
                     tag="shortcoming-4"
-                    allow-empty="true"
+                    allow-empty=true
                   ></free-response>
                 </v-col>
               </v-row>
@@ -251,7 +251,7 @@
                   <free-response
                     outlined
                     auto-grow
-                    rows="2"
+                    rows=2
                     label="Problems in Our Methods"
                     hint="(problems that might lead to systematic uncertainty)"
                     tag="systematic-uncertainty"

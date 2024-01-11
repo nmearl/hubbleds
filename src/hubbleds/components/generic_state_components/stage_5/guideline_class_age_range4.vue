@@ -6,7 +6,7 @@
   >
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+      v-intersect="checkIntersecting"
     >
       <v-card
         class="JaxEquation pa-3"
@@ -31,6 +31,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
+  }
 }
 </script>

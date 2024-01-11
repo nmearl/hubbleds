@@ -10,7 +10,7 @@
   >
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+      v-intersect="checkIntersecting"
     >
       <p>
         Recall from our runners, that the "age" of the runners' race can be found from:
@@ -86,6 +86,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
+  }
 }
 </script>

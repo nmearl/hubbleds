@@ -25,7 +25,7 @@
           :incorrect-answers="[0,1]"
           :correct-answers="[2]"
           :neutral-answers="[]"
-          @select="(state) => { if (state.correct) { $emit('ready'); } }"
+          @select="onSelect"
           score-tag="unc-range-change"
         >
         </mc-radiogroup>
@@ -37,6 +37,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  methods: {
+    onSelect(state) { if (state.correct) { this.$emit('ready'); } }
+  }
 }
 </script>

@@ -17,6 +17,11 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  // mounted() {
+  //   let mathJaxScript = document.createElement('script')
+  //   mathJaxScript.setAttribute('src', 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML')
+  //   document.head.appendChild(mathJaxScript)
+  // },
 }
 </script>

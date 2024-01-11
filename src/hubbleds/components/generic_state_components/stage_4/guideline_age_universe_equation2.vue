@@ -10,7 +10,7 @@
   >
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+      v-intersect="checkIntersecting"
     >
       <p>
         In the units astronomers use, we can write this as:
@@ -113,6 +113,9 @@
 
 <script>
 module.exports = {
-  props: ['state']
+  props: ['state'],
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
+  }
 }
 </script>

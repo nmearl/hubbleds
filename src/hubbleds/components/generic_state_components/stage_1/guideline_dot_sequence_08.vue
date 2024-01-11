@@ -26,7 +26,7 @@
             ]" 
           :correct-answers="[1]"
           :neutral-answers="[0, 2]"
-          @select="(opt) => { if (opt.correct) { console.log('correct'); $emit('ready'); } }"
+          @select="onSelect"
           score-tag="vel_meas_consensus">
             >
           </mc-radiogroup>
@@ -37,6 +37,9 @@
 
 <script>
 module.exports = {
- props: ['state']
+ props: ['state'],
+  methods: {
+   onSelect(opt) { if (opt.correct) { console.log('correct'); this.$emit('ready'); } }
+  }
 }
 </script>

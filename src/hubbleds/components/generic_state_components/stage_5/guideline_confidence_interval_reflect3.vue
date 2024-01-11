@@ -89,7 +89,7 @@
           lg="3">
           <free-response
             outlined
-            rows="1"
+            rows=1
             label="Likely Low Age"
             tag="likely-low-age"
             type="float"
@@ -104,7 +104,7 @@
           lg="3">
           <free-response
             outlined
-            rows="1"
+            rows=1
             label="Likely High Age"
             tag="likely-high-age"
             type="float"
@@ -130,7 +130,7 @@
           <free-response
             outlined
             auto-grow
-            rows="2"
+            rows=2
             label="My Reasoning"
             tag="my-reasoning-2"
           ></free-response>

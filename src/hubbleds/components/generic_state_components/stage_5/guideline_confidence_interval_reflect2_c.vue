@@ -77,7 +77,7 @@
         >
           <free-response
             outlined
-            rows="1"
+            rows=1
             label="New Most Likely Age"
             tag="new-most-likely-age"
             type="float"
@@ -155,7 +155,7 @@
           lg="3">
           <free-response
             outlined
-            rows="1"
+            rows=1
             label="New Likely Low Age"
             tag="new-likely-low-age"
             type="float"
@@ -170,7 +170,7 @@
           lg="3">
           <free-response
             outlined
-            rows="1"
+            rows=1
             label="New Likely High Age"
             tag="new-likely-high-age"
             type="float"
@@ -187,7 +187,7 @@
       </p>
       <free-response
         outlined
-        rows="1"
+        rows=1
         label="My Updated Reasoning"
         tag="my-updated-reasoning"
       ></free-response>

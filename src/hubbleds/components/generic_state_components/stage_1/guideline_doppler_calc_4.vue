@@ -15,7 +15,7 @@
         }"
   >
     <div
-        v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+        v-intersect="checkIntersecting"
         class="mb-4"
     >
       <p>
@@ -183,6 +183,11 @@ module.exports = {
       });
     }
   },
+  computed: {
+    checkIntersecting() {
+      return (entries, _observer, intersecting) => { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
+    }
+  }
 };
 </script>
 

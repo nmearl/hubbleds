@@ -35,7 +35,7 @@
       <free-response
         outlined
         auto-grow
-        rows="2"
+        rows=2
         label="Why?"
         tag="prodata-free-4"
         v-if="advance"

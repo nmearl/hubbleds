@@ -15,7 +15,7 @@
 
     <div
       class="mb-4"
-      v-intersect="(entries, _observer, intersecting) => { if (intersecting) { MathJax.typesetPromise(entries.map(entry => entry.target)) }}"
+      v-intersect="checkIntersecting"
     >
       <p>
         Enter the <strong>distance</strong> (in <strong>Mpc</strong>) and <strong>velocity</strong> (in <strong>km/s</strong>) of your hypothetical "Best Fit Galaxy" in the boxes.
@@ -180,6 +180,9 @@ module.exports = {
         return value && value === expectedAnswers[index];
       });
     }
+  },
+  computed: {
+    checkIntersecting(entries, _observer, intersecting) { if (intersecting) { window.MathJax.typesetPromise(entries.map(entry => entry.target)) }}
   }
 };
 </script>

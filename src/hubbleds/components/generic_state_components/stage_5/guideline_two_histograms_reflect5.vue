@@ -18,7 +18,7 @@
           <free-response
             outlined
             auto-grow
-            rows="2"
+            rows=2
             label="My Reasoning"
             tag="unc-range-change-reasoning"
           ></free-response>
