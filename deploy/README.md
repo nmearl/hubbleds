@@ -1,6 +1,6 @@
-# Updating Deployed Dashboard
+# Updating Deployed Application
 
-**NOTE**: This is specific to deploying the dashboard *only*.
+**NOTE**: This is specific to deploying the Solara-based application *only*.
 
 1. Create a zipped source file. Only the files in this directory need to be included. Due to quirks of using your OS's built-in compression functions, it's advised to use the following command:
     ```
