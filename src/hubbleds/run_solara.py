@@ -1,15 +1,17 @@
+import hashlib
 import os
 from warnings import filterwarnings
 
+import solara
+from cosmicds.app import Application
+from solara.alias import rv
+from solara.server import settings
+from solara_enterprise import auth
+
 filterwarnings(action="ignore", category=UserWarning)
 
-from cosmicds.app import Application
-
-import solara
-from solara.alias import rv
-import hashlib
-
-from solara_enterprise import auth
+if 'AWS_EBS_URL' in os.environ:
+    settings.main.base_url = os.environ['AWS_EBS_URL']
 
 active = solara.reactive(False)
 user_info = solara.reactive({})
