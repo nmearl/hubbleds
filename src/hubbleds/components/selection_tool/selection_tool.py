@@ -9,6 +9,7 @@ from pandas import DataFrame, concat
 # from pywwt.jupyter import WWTJupyterWidget
 from ipywwt import WWTWidget
 from traitlets import Dict, Instance, Int, Bool, observe
+from time import sleep
 
 from ...utils import FULL_FOV, GALAXY_FOV
 from ...utils import HUBBLE_ROUTE_PATH
@@ -35,7 +36,7 @@ class SelectionTool(v.VueTemplate):
         self.widget.background = 'SDSS: Sloan Digital Sky Survey (Optical)'
         self.widget.foreground = 'SDSS: Sloan Digital Sky Survey (Optical)'
         self.widget.center_on_coordinates(self.START_COORDINATES, fov= 6 * u.arcmin, #start in close enough to see galaxies
-                                          instant=False)
+                                          instant=True)
 
         df = data.to_dataframe()
         self.table = Table.from_pandas(df)
@@ -90,16 +91,20 @@ class SelectionTool(v.VueTemplate):
         super().__init__(*args, **kwargs)
 
     def show_galaxies(self, show=True):
-        if show and self.sdss_layer is None:
-            layer = self.widget.layers.add_table_layer(self.table)
-            layer.marker_type = "gaussian"
-            layer.size_scale = 100
-            layer.color = "#00FF00"
-            self.sdss_layer = layer
-        elif not show:
-            self.widget.layers.remove_layer(self.sdss_layer)
-            self.sdss_layer = None
-
+        def after_mounted1():
+            sleep(.1)
+            print('adding galaxies layers')
+            if show and self.sdss_layer is None:
+                layer = self.widget.layers.add_table_layer(self.table, marker_type="gaussian", size_scale=200, color="#00FF00")
+                # layer.marker_type = "gaussian"
+                # layer.size_scale = 100
+                # layer.color = "#00FF00"
+                self.sdss_layer = layer
+            elif not show:
+                self.widget.layers.remove_layer(self.sdss_layer)
+                self.sdss_layer = None
+        self.widget.ensure_mounted(after_mounted1)
+    
     @property
     def on_galaxy_selected(self):
         return self._on_galaxy_selected
@@ -118,14 +123,18 @@ class SelectionTool(v.VueTemplate):
         self.selected = False
 
     def _create_selected_layer(self):
-        self.table = Table.from_pandas(self.selected_data)
-        layer = self.widget.layers.add_table_layer(self.table)
-        layer.marker_type = "gaussian"
-        layer.size_scale = 100
-        layer.color = "#FF0000" # This will mix with #00FF00 above to make yellow
-        if self.selected_layer is not None:
-            self.widget.layers.remove_layer(self.selected_layer)
-        self.selected_layer = layer
+        def after_mounted2():
+            print('creating selected layer')
+            sleep(.1)
+            self.table = Table.from_pandas(self.selected_data)
+            layer = self.widget.layers.add_table_layer(self.table, marker_type="circle", size_scale=200, color="#FF0000")
+            # layer.marker_type = "gaussian"
+            # layer.size_scale = 100
+            # layer.color = "#FF0000" # This will mix with #00FF00 above to make yellow
+            if self.selected_layer is not None:
+                self.widget.layers.remove_layer(self.selected_layer)
+            self.selected_layer = layer
+        self.widget.ensure_mounted(after_mounted2)
 
     def vue_select_current_galaxy(self, _args=None):
         self.select_galaxy(self.current_galaxy)
