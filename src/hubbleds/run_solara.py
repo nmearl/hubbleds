@@ -20,8 +20,16 @@ update_db = solara.reactive(False)
 debug_mode = solara.reactive(False)
 
 
+def get_session_id() -> str:
+    """Returns the session id, which is stored using a browser cookie."""
+    import solara.server.kernel_context
+
+    context = solara.server.kernel_context.get_current_context()
+    return context.session_id
+
+
 def _load_from_cache():
-    cache = solara.cache.storage.get('cds-login-options')
+    cache = solara.cache.storage.get(f"cds-login-options-{get_session_id()}")
 
     if cache is not None:
         for key, state in [('class_code', class_code),
@@ -32,7 +40,7 @@ def _load_from_cache():
 
 
 def _save_to_cache():
-    solara.cache.storage['cds-login-options'] = {
+    solara.cache.storage[f"cds-login-options-{get_session_id()}"] = {
         'class_code': class_code.value,
         'update_db': update_db.value,
         'debug_mode': debug_mode.value
