@@ -55,6 +55,9 @@ class SpecView(LineHoverViewerMixin, BqplotScatterView):
 
         self.element = None
 
+        # Throttle the requests made by mouse interactions
+        self._mouse_interact.move_throttle = 200
+
         self.element_tick = Lines(
             x=[],
             y=[0, 0],
