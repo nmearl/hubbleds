@@ -857,8 +857,9 @@
               $emit('submit');
               dialog = false;
               step = 0;
-              // marker_forward = 1;
-              student_vel_calc = true}"
+              set_student_vel_calc();
+              next_callback();
+            }"
         >
           Done
         </v-btn>

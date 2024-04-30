@@ -118,6 +118,7 @@ class ComponentState:
         default_factory=DopplerCalculation
     )
     student_vel: Reactive[float] = dataclasses.field(default=Reactive(0))
+    dotplot_tutorial_finished: Reactive[bool] = dataclasses.field(default=Reactive(False))
 
     def __post_init__(self):
         self._galaxy_data = None
@@ -242,8 +243,12 @@ class ComponentState:
         return self.zoom_tool_activated.value
 
     @computed_property
-    def che_mea1(self):
-        return self.doppler_calc_state.complete.value
+    def che_mea1_gate(self):
+        return self.doppler_calc_state.student_vel_calc.value
+
+    @computed_property
+    def dot_seq1_gate(self):
+        return self.dotplot_tutorial_finished.value
 
     @property
     def galaxy_data(self):
