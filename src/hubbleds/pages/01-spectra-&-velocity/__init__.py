@@ -187,6 +187,25 @@ def Page():
                 can_advance=component_state.can_transition(next=True),
                 show=component_state.is_current_step(Marker.cho_row1),
             )
+            ScaffoldAlert(
+                GUIDELINE_ROOT / "GuidelineDopplerCalc4.vue",
+                event_next_callback=lambda *args: component_state.transition_next(),
+                event_back_callback=lambda *args: component_state.transition_previous(),
+                can_advance=component_state.can_transition(next=True),
+                show=component_state.is_current_step(Marker.dop_cal4),
+                state_view={
+                    "lambda_obs": component_state.lambda_obs.value,
+                    "lambda_rest": component_state.lambda_rest.value,
+                    "failed_validation_4": component_state.doppler_calc_state.failed_validation_4.value,
+                },
+            )
+            ScaffoldAlert(
+                GUIDELINE_ROOT / "GuidelineCheckMeasurement.vue",
+                event_next_callback=lambda *args: component_state.transition_next(),
+                event_back_callback=lambda *args: component_state.transition_previous(),
+                can_advance=component_state.can_transition(next=True),
+                show=component_state.is_current_step(Marker.che_mea1),
+            )
 
         with rv.Col(cols=8):
             if Marker.cho_row1.value <= component_state.current_step.value.value < Marker.rem_gal1.value:
@@ -300,18 +319,6 @@ def Page():
                 can_advance=component_state.can_transition(next=True),
                 show=component_state.is_current_step(Marker.dop_cal2),
             )
-            ScaffoldAlert(
-                GUIDELINE_ROOT / "GuidelineDopplerCalc4.vue",
-                event_next_callback=lambda *args: component_state.transition_next(),
-                event_back_callback=lambda *args: component_state.transition_previous(),
-                can_advance=component_state.can_transition(next=True),
-                show=component_state.is_current_step(Marker.dop_cal4),
-                state_view={
-                    "lambda_obs": component_state.lambda_obs.value,
-                    "lambda_rest": component_state.lambda_rest.value,
-                    "failed_validation_4": component_state.doppler_calc_state.failed_validation_4.value,
-                },
-            )
 
         with rv.Col(cols=8):
             if component_state.current_step.value.value >= Marker.mee_spe1.value:
@@ -358,5 +365,6 @@ def Page():
                 interact_steps_5=component_state.doppler_calc_state.interact_steps_5.value,
                 student_vel=component_state.student_vel.value,
                 student_c=component_state.doppler_calc_state.student_c.value,
-                student_vel_calc=component_state.doppler_calc_state.student_vel_calc.value
+                event_set_student_vel_calc=lambda *args: component_state.doppler_calc_state.student_vel_calc.set(True),
+                event_next_callback=lambda *args: component_state.transition_next()
             )

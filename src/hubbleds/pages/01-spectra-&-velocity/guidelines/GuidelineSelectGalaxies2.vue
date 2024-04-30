@@ -9,8 +9,6 @@
       @next="next_callback()"
       :can-advance="can_advance"
   >
-    <p>{{ state_view }} {{ can_advance }}</p>
-
 <!--    <template #before-next>-->
 <!--      <div>-->
 <!--        <div-->
