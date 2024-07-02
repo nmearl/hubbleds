@@ -1,93 +1,9 @@
-:root {
-    --primary-dark: #0D47A1;
-    --secondary-dark: #00838F;
-    --accent-dark: #FFC400;
-    --error-dark: #D81B60;
-    --info-dark: #BF360C;
-    --success-dark: #00E676;
-    --warning-dark: #DD2C00;
-    
-    --primary-light: #1565C0;
-    --secondary-light: #006064;
-    --accent-light: #FFD740;
-    --error-light: #F06292;
-    --info-light: #FF7043;
-    --success-light: #388E3C;
-    --warning-light: #DD2C00;
-    
-    --cosmicds-red: #E60001;
-    --cosmicds-blue: #0F3A7E;
-
-    --cosmicds-red-lighter: #ff4e4e;
-    --cosmicds-blue-lighter: #1a63d9;
-}
-
-:root .theme--dark {
-    --primary: var(--primary-dark);
-    --secondary: var(--secondary-dark);
-    --accent: var(--accent-dark);
-    --error: var(--error-dark);
-    --info: var(var(--info-dark));
-    --success: var(--success-dark);
-    --warning: var(--warning-dark);
-}
-
-:root .theme--light {
-    --primary: var(--primary-light);
-    --secondary: var(--secondary-light);
-    --accent: var(--accent-light);
-    --error: var(--error-light);
-    --info: var(--info-light);
-    --success: var(--success-light);
-    --warning: var(--warning-light);
-}
-
-.theme--dark .v-sheet {
-    color: white;
+.theme--dark.v-sheet {
     background-color: #121212;
 }
 
-.theme--light .v-sheet {
-    color: black;
-    background-color: #FAFAFA;
-}
-
-/* This removes the solara watermark */
 .v-application--wrap > div:nth-child(2) > div:nth-child(2){
     display: none !important;
-}
-
-.theme--dark .toolbar {
-    background-color: var(--primary-dark) !important;    
-}
-.theme--light .toolbar {
-    color: white !important;
-    background-color: var(--primary-light) !important;    
-}
-
-.tutorial {
-    background-color: var(--secondary) !important;
-}
-
-.inline-guideline-button {
-    color:white !important;
-    border-radius: 5px; 
-    padding: 3px; 
-}
-
-/* NOTE: .v-application based selectors will work, but often will need to be either !important or (also) have a higher specificity selector than the default Vuetify css. */
-/* Note that theme--dark and theme--light are defined on the *same* element as v-application, so .v-application should not be a descendent of .theme--[dark/light] */
-.theme--dark.v-application .legend {
-    border: 1px solid white !important;
-}
-.theme--light.v-application .legend {
-    border: 1px solid black !important;
-}
-
-.v-application .legend {
-    max-width: 300px;
-    margin: 0 auto 0;
-    font-size: 15px !important;
 }
 
 .toolbar-title {
@@ -104,11 +20,6 @@
     font-weight: bold !important;
     padding-inline: 20px;
 }
-
-.no-padding {
-    padding: 0;
-}
-
 footer .col {
     padding-block: 0;
 }
@@ -122,15 +33,9 @@ footer .v-card__text {
     padding: 6px;
 }
 
-.theme--dark .cosmicds-footer {
-    background-color: var(--cosmicds-blue) !important; 
+.cosmicds-footer {
+    background-color: #003186 !important; 
     color: #BDBDBD !important; 
-    padding-block: 0;
-}
-
-.theme--light .cosmicds-footer {
-    background-color: var(--cosmicds-blue-lighter) !important; 
-    color: #F5f5f5 !important; 
     padding-block: 0;
 }
 
@@ -162,24 +67,9 @@ footer .v-card__text {
     background-color: #000b !important;
 }
 
-
-
 /*.solara-container-main {*/
 /*    max-width: 1264px;*/
 /*    height: 100%;*/
 /*    max-height: 100%;*/
 /*    overflow: auto*/
 /*}*/
-
-
-/***** 
-    ================================
-    Solara/Vuetify default overrides 
-    ================================
-*****/
-
-/* buttons should remain white, even in dark mode. 
-    as the toolbar is still #1565C0 */
-.theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn .v-icon {
-    color: #fff !important;
-}

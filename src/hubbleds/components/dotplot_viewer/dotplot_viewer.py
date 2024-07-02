@@ -10,7 +10,7 @@ from hubbleds.viewers.hubble_dotplot import HubbleDotPlotView
 @solara.component
 def DotplotViewer(gjapp, data=None, height=400):
     with rv.Card() as main:
-        with rv.Toolbar(dense=True, class_="toolbar"):
+        with rv.Toolbar(dense=True, color="primary"):
             with rv.ToolbarTitle():
                 title_container = rv.Html(tag="div")
 

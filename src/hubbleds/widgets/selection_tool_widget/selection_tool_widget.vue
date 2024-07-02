@@ -5,9 +5,9 @@
     :class="highlighted ? 'pa-1' : ''"
   >
     <v-toolbar
+      color="primary"
       dense
       dark
-      class="toolbar"
     >
       <v-toolbar-title
         class="text-h6 text-uppercase font-weight-regular"
@@ -150,7 +150,7 @@
             bottom
             left
             absolute
-            color="var(--success-dark)"
+            color="#00E676"
             class="selection-fab black--text"
             v-bind="attrs"
             v-on="on"
@@ -170,7 +170,7 @@
             bottom
             right
             absolute
-            color="var(--success-dark)"
+            color="#00E676"
             class="selection-fab black--text"
             v-bind="attrs"
             v-on="on"

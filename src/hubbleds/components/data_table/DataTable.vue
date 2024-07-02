@@ -5,23 +5,22 @@
           :outlined="highlighted"
   >
     <v-toolbar
-      color="primary"
-      class="toolbar"
-      dense
-      dark
-      rounded
-      flat
-    >
-      <v-toolbar-title
-          class="text-h6 text-uppercase font-weight-regular"
-      >
-          {{ title }}
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon @click="calculate_velocity" v-if="show_velocity_button">
-        <v-icon>mdi-run-fast</v-icon>
-      </v-btn>
-    </v-toolbar>
+            color="primary"
+            dense
+            dark
+            rounded
+            flat
+        >
+          <v-toolbar-title
+              class="text-h6 text-uppercase font-weight-regular"
+          >
+             {{ title }}
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="calculate_velocity" v-if="show_velocity_button">
+            <v-icon>mdi-run-fast</v-icon>
+          </v-btn>
+        </v-toolbar>
 
     <v-data-table
         :headers="headers"

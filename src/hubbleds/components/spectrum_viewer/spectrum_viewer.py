@@ -31,7 +31,7 @@ def SpectrumViewer(
         on_obs_wave_tool_clicked()
 
     with rv.Card():
-        with rv.Toolbar(class_="toolbar", dense=True):
+        with rv.Toolbar(color="primary", dense=True):
             with rv.ToolbarTitle():
                 solara.Text("SPECTRUM VIEWER")
 

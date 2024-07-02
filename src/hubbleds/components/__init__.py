@@ -7,6 +7,7 @@ from .stage_2_slideshow.stage_2_slideshow import Stage2Slideshow
 from .reflect_velocity_slideshow.reflect_velocity_slideshow import (
     ReflectVelocitySlideshow,
 )
+from .grid_viewer.grid_viewer import GridViewer
 from .angsize_dosdonts_slideshow.angsize_dosdonts_slideshow import (
     AngsizeDosDontsSlideshow,
 )

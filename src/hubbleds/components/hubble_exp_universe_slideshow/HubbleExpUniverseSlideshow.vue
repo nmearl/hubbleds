@@ -26,7 +26,6 @@
         dark
       >
         <v-toolbar-title
-          style="color: white;"
           class="text-h6 text-uppercase font-weight-regular"
         >
           {{ titles[step] }}
@@ -40,7 +39,8 @@
           /> -->
         <v-btn
           icon
-          @click="dialog = false;"
+          @click="closeDialog()"
+          :disabled="maxStepCompleted < length - 1"
         >
           <v-icon>mdi-close</v-icon>
         </v-btn>

@@ -6,7 +6,7 @@
     :can-advance="can_advance"
   >
     <template #before-next>
-      Click <span class="inline-guideline-button tutorial">DOT PLOT TUTORIAL</span> button.
+      Click <span style="background-color: #02838f; border-radius: 5px; padding: 3px; color:white!important;">DOT PLOT TUTORIAL</span> button.
     </template>
 
     <div>
@@ -17,7 +17,7 @@
         Your measurement is shown as an orange-red dot.
       </p>
       <p>
-        Click the <span class="inline-guideline-button tutorial">DOT PLOT TUTORIAL</span> button to learn about interpreting dot plots.
+        Click the <span style="background-color: #02838f; border-radius: 5px; padding: 3px; color:white!important;">DOT PLOT TUTORIAL</span> button to learn about interpreting dot plots.
       </p>
     </div>
   </scaffold-alert>

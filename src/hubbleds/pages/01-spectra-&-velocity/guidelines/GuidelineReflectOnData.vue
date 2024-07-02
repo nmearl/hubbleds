@@ -11,7 +11,7 @@
   >
 
     <template #before-next>
-      Click <span class="inline-guideline-button" style="background-color: var(--warning-dark);">REFLECT</span> button.
+      Click <span style="background-color: #DD2C00; border-radius: 5px; padding: 3px; color:white!important;">REFLECT</span> button.
     </template>
 
     <div
@@ -21,7 +21,7 @@
         As scientists do, let’s examine what conclusions you might draw from your data.
       </p>
       <p>
-        Click the <span class="inline-guideline-button" style="background-color: var(--warning-dark);">REFLECT</span> button to complete the reflection sequence before moving on.
+        Click the <span style="background-color: #DD2C00; border-radius: 5px; padding: 3px; color:white!important;">REFLECT</span> button to complete the reflection sequence before moving on.
       </p>
     </div>
   </scaffold-alert>

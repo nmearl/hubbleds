@@ -31,11 +31,11 @@
 <!--            style="font-size: 16px;"-->
 <!--        >-->
 <!--          <b>Click</b>-->
-<!--          <v-btn icon dark x-small disabled class="mx-1 black&#45;&#45;text" elevation="2" style="background-color: var(--success-dark);">-->
+<!--          <v-btn icon dark x-small disabled class="mx-1 black&#45;&#45;text" elevation="2" style="background-color: #00E676;">-->
 <!--            <v-icon style="color:black!important;">mdi-plus</v-icon>-->
 <!--          </v-btn>-->
 <!--          to add galaxy or-->
-<!--          <v-btn icon dark x-small disabled class="mx-1 black&#45;&#45;text" elevation="2" style="background-color: var(--success-dark);">-->
+<!--          <v-btn icon dark x-small disabled class="mx-1 black&#45;&#45;text" elevation="2" style="background-color: #00E676;">-->
 <!--            <v-icon style="color:black!important;">mdi-cached</v-icon>-->
 <!--          </v-btn>-->
 <!--          to choose another-->
@@ -59,14 +59,14 @@
     >
       <p>
         If this galaxy looks good to you, click
-        <v-btn icon dark x-small disabled class="mx-1 black--text" elevation="2" style="background-color: var(--success-dark);">
+        <v-btn icon dark x-small disabled class="mx-1 black--text" elevation="2" style="background-color: #00E676;">
           <v-icon style="color:black!important;">mdi-plus</v-icon>
         </v-btn>
         to add it to your data set.
       </p>
       <p>
         If you’d rather look for another galaxy, click
-        <v-btn icon dark x-small disabled class="mx-1 black--text" elevation="2" style="background-color: var(--success-dark);">
+        <v-btn icon dark x-small disabled class="mx-1 black--text" elevation="2" style="background-color: #00E676;">
           <v-icon style="color:black!important;">mdi-cached</v-icon>
         </v-btn>
         to reset the view and choose a different green dot.

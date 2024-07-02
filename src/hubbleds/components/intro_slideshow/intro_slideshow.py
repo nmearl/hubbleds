@@ -98,7 +98,7 @@ def IntroSlideshow():
                         classes=["padded-text"],
                     )
 
-                    with solara.Card(classes=["toolbar"]):
+                    with solara.Card(style="background-color: #0D47A1"):
                         solara.HTML(
                             unsafe_innerHTML=
                             """
@@ -113,6 +113,7 @@ def IntroSlideshow():
                                 If not, how long ago did it form?
                             </p>                            
                             """,
+                            classes=["intro-card-text"],
                         )
 
                 with solara.Column(align="center"):
@@ -532,4 +533,5 @@ def IntroSlideshow():
         length=len(carousel.kwargs.get("children", [])),
         circle=True,
         class_="elevation-0",
+        navigation_color="red",
     )
