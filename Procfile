@@ -1,1 +1,1 @@
-web: solara run hubbleds.pages --theme-variant dark --port=8000 --no-open --production --root-path /hubbleds
+web: uvicorn hubbleds.server:app --port=8000
