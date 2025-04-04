@@ -957,7 +957,7 @@
           // this.$refs.synth.stopSpeaking();
         }"
       >
-        get started
+        Stage 1
       </v-btn>
     </v-card-actions>
   </v-card>
