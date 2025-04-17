@@ -28,8 +28,7 @@ def Layout(children=[]):
 
     def _load_global_local_states():
         # Force reset global and local states
-        logger.info("Clearing global and local states.")
-        GLOBAL_STATE.set(GLOBAL_STATE.value.__class__())
+        logger.info("Clearing local states.")
         LOCAL_STATE.set(LOCAL_STATE.value.__class__())
 
         if student_id.value is None:
