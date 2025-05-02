@@ -26,7 +26,7 @@
         class="JaxEquation my-8 est-age"
       >
 
-      $$ D = {{Math.round(this.state_view.age_const * state_view.hypgal_distance / state_view.hypgal_velocity).toFixed(0)}} \text{ Gyr} $$
+      $$ t = {{Math.round(this.state_view.age_const * state_view.hypgal_distance / state_view.hypgal_velocity).toFixed(0)}} \text{ Gyr} $$
 
       </div>
       <v-divider role="presentation" class="mt-3"></v-divider>
